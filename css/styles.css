@@ -80,11 +80,12 @@ form {
   margin-top: 3rem;
 }
 
-fieldset{
+.flex {
   display: flex;
   flex-direction: column;
-  border: none;
 }
+
+fieldset {border: none;}
 
 fieldset:not(:last-of-type) {
   border-bottom: 2px solid #45E546;
@@ -114,12 +115,15 @@ select {
   transition: border-bottom .4s;
 }
 
-input[type=text]:not(#zip),
+/*input[type=text]:not(#zip),
 input[type=email],
 input[type=telephone],
 select {
     width: 100%;
-}
+}*/
+
+#zip {width: 35%;}
+
 
 input::-webkit-input-placeholder {
   padding: 0 1rem;
@@ -212,6 +216,29 @@ footer {
     display: block;
   }
 
+  .flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .flex label:not(:last-of-type) {
+    flex: 1 30%;
+  }
+
+  .flex input:not(:last-of-type),
+  .flex select {
+    flex: 1 70%;
+  }
+
+  .flex label:last-of-type {
+    flex: 1 70%;
+  }
+
+  .flex input:last-of-type {
+    flex: 1 30%;
+  }
+
   #container {
     width: 60%;
     margin: 0 auto;
@@ -221,24 +248,23 @@ footer {
     margin-top: 5.5rem;
   }
 
-  label,
+/*  label,
   input[type="text"],
   input[type="telephone"],
   input[type="email"] {
-  display: inline-block;
-  }
+    align-self: stetch;
+  }*/
 
-  label:not(#topics) {
+/*  label:not(#topics) {
     display: inline-block;
     width: 30%;
-  }
+  }*/
 
   input[type=text]:not(#zip),
   input[type=email],
   input[type=telephone],
   select {
     margin-bottom: 3rem;
-    width: 69%;
   }
 
 }
